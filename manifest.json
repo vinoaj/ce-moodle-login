@@ -1,0 +1,15 @@
+{
+    // Required
+    "manifest_version": 2,
+    "name": "Moodle Login Automator",
+    "version": "1.0",
+
+    "description": "Automates logging into Moodle",
+    "permissions": ["storage"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "author": "Vinoaj Vijeyakumaar",
+    "homepage_url": "https://vinoaj.com/"
+}
