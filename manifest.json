@@ -5,11 +5,12 @@
     "version": "1.0",
 
     "description": "Automates logging into Moodle",
-    "permissions": ["storage"],
+    "permissions": ["declarativeContent", "storage"],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
+    "options_page": "options.html",
     "author": "Vinoaj Vijeyakumaar",
     "homepage_url": "https://vinoaj.com/"
 }
