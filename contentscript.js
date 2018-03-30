@@ -6,3 +6,5 @@
  * - Cannot modify the DOM of its parent extension's background page.
 */
 
+var port = chrome.runtime.connect();
+

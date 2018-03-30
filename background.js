@@ -15,8 +15,13 @@ var ruleNotLoggedIn = {
     ]
 };
 
+// When extension is installed / upgraded
 chrome.runtime.onInstalled.addListener(function() {
+    // Replace all rules
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-        chrome.declarativeContent.onPageChanged.addRules([ruleNotLoggedIn]);
+        //With new rule
+        chrome.declarativeContent.onPageChanged.addRules(
+            [ruleNotLoggedIn],
+            actions: [chrome.declarativeContent.showPageAction()]
     });
 });
