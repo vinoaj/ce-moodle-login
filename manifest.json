@@ -4,13 +4,28 @@
     "version": "1.0",
 
     "description": "Automates logging into Moodle",
-    "permissions": ["declarativeContent", "storage"],
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
+    "permissions": [
+        "activeTab", 
+        "declarativeContent",
+        "storage",
+        "tabs"
+    ],
+    // "background": {
+    //     "scripts": ["background.js"],
+    //     "persistent": false
+    // },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/course/*",
+                "https://*/enrol/*",
+                "https://*/login/*"
+            ],
+            "js": ["contentscript.js"]
+        }
+    ],
     "options_page": "options.html",
-    "page_action": {
+    "browser_action": {
         "default_title": "Moodle Login"
     },
     "author": "Vinoaj Vijeyakumaar",
