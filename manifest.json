@@ -10,16 +10,12 @@
         "storage",
         "tabs"
     ],
-    // "background": {
-    //     "scripts": ["background.js"],
-    //     "persistent": false
-    // },
     "content_scripts": [
         {
             "matches": [
                 "https://*/course/*",
                 "https://*/enrol/*",
-                "https://*/login/*"
+                "https://*/cas/*"
             ],
             "js": ["contentscript.js"]
         }
