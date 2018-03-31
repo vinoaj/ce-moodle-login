@@ -8,8 +8,10 @@
 
 // var port = chrome.runtime.connect();
 
+var URL_SSO = "https://ssologin.unsw.edu.au/cas/login?service=https://moodle.telt.unsw.edu.au/login/index.php?authCAS=CAS"
+
 function navigateToLoginPage() {
-    document.location = "https://ssologin.unsw.edu.au/cas/login?service=https://moodle.telt.unsw.edu.au/login/index.php?authCAS=CAS";
+    document.location = URL_SSO;
     // var el = document.querySelectorAll("a[href*='/login/index.php']")[0];
     // el.click();
 }
@@ -33,8 +35,7 @@ function submit() {
 function init() {
     if (document.querySelectorAll("a[href*='/login/index.php']").length > 0) {
         navigateToLoginPage();
-    } else {
-        console.log("In else loop");
+    } else if (document.location == URL_SSO) {
         enterUsername();
         enterPassword();
         window.setTimeout(submit,1000);
